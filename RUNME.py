@@ -33,16 +33,17 @@ from solacc.companion import NotebookSolutionCompanion
 # COMMAND ----------
 
 cluster_json = {
-    "num_workers": 8,
-    "cluster_name": "MRA_cluster",
-    "spark_version": "9.1.x-cpu-ml-scala2.12", 
+    "num_workers": 0,
+    "cluster_name": "My_Custom_cluster",
+    "spark_version": "10.4.x-scala2.12", 
     "spark_conf": {
         "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
         "spark.kryoserializer.buffer.max": "2000M",
         "spark.databricks.delta.formatCheck.enabled": "false"
     },
     "node_type_id": {"AWS": "i3.xlarge", "MSA": "Standard_DS3_v2", "GCP": "n1-highmem-4"}, # different from standard API; this is multi-cloud friendly
-    "autotermination_minutes": 120
+    "autotermination_minutes": 120,
+    "single_user_notebook": True
 }
 
 # COMMAND ----------
